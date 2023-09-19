@@ -1,0 +1,21 @@
+body{
+    background-image: url(https://img.freepik.com/free-photo/excited-hispanic-schoolgirl-having-idea_23-2148224786.jpg?size=626&ext=jpg&ga=GA1.2.1670616740.1693023713&semt=sph);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.studOne{
+    margin-top: 10%;
+    margin-left: 10%;
+    color: orange;
+    height: 400px;
+    width: 450px;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+}
+button{
+    border: none;
+    background-color: orange;
+    width: 90px;
+    color: white;
+}

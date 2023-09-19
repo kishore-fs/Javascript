@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1=50,num2=40;
+        function evalNumbers()
+    {
+        let operation="add";
+        switch(operation)
+        {
+            case "add":
+                console.log("Addition",(num1+num2));
+                break;
+            case "sub":
+                console.log("Subtraction",(num1-num2));
+                break;
+            case "mul":
+                console.log("Multiplication",(num1*num2));
+                break;
+            case "div":
+                console.log("Division",(num1/num2));
+                break;
+            case "mod":
+                console.log("Modulus",(num1%num2));
+                break;
+        }
+    }
+    evalNumbers()
+    </script>
+</body>

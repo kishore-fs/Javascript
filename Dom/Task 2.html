@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Cat</title>
+
+    <!-- CSS -->
+    <style>
+        #bulb {
+            position: absolute;
+            height: 200px;
+        }
+        #cat {
+            height: 350px;
+            position: absolute;
+            top: 150px;
+            left: 525px;
+        }        
+    </style>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <!--Javascript -->
+    <script type="text/javascript">
+
+        function switchOff() {
+            document.getElementById("btnOn").style.backgroundColor="";
+            var bulb = document.getElementById("bulb").src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png";
+            var cat = document.getElementById("cat").src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-eyes-img.png";
+            document.getElementById("btnOff").style.backgroundColor="red";
+            document.getElementById("text").textContent="Switched Off";
+            document.getElementById("cardbg").style.backgroundColor="grey";
+        }
+
+        function switchOn() {
+            document.getElementById("btnOff").style.backgroundColor="";
+            var bulb=document.getElementById("bulb");
+            var cat=document.getElementById("cat");
+            bulb.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png";
+            cat.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-img.png";
+            document.getElementById("btnOn").style.backgroundColor="green";
+            document.getElementById("text").textContent="Switched On";
+
+        }
+    </script>
+    <!-- End of Javascript -->
+</head>
+<body class="d-flex justify-content-center bg-black">
+    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png" id="bulb" alt="">
+    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/cat-eyes-img.png" id="cat" alt="">
+    <section class="cardPosition d-flex justify-content-center align-items-end vh-100">
+        <div class="card bg-secondary mb-5" style="width: 15rem;">
+            <div class="card-body text-center" id="cardbg">
+                <h5 class="card-title" id="text">Switched Off</h5>
+                <input href="#" type="button" onclick="switchOn()" id="btnOn" value="ON" class="btn btn-outline-light">
+                <input href="#" type="button" onclick="switchOff()" id="btnOff" value="OFF" class="btn btn-outline-light">
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

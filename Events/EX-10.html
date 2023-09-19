@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generation</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function pass()
+        {
+            var d=new Date(document.getElementById("dat").value);
+            var s1=d.getDate();
+            var n=document.getElementById("name").value;
+            var s2=n.slice(0,4);
+            document.getElementById("pas").value=s2+s1;
+        }
+    </script>
+    <label for="name">Username</label>
+    <input type="text" id="name">
+    <label for="dat">Dob</label>
+    <input type="date" id="dat"><br><br>
+    <label for="pas">Password</label>
+    <input type="text" id="pas">
+
+    <button onclick="pass()">click</button>
+
+</body>
+</html>

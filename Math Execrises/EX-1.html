@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function rand(a,b)
+{
+    while (true)
+    {
+        if(a==undefined)
+        {
+            return "0";
+        }
+        else if(a>b)
+        {
+            var ran=Math.random()*a;
+            if(ran>=b)
+            {
+                return Math.round(ran);
+            }
+        }
+        else if(a<b)
+        {
+            var ran=Math.random()*b;
+            if(ran>=a)
+            {
+                return Math.round(ran);
+            }
+        }
+        else if(b==undefined)
+        {
+            return Math.round(Math.random()*a);
+
+        }
+        else if(a==b && b!=undefined)
+        {
+            return "Give Different Number";
+        }
+    }
+}
+console.log(rand(20,1));
+console.log(rand(20,20));
+console.log(rand(1,10));
+console.log(rand(6));
+console.log(rand());
+    </script>
+</body>
+</html>

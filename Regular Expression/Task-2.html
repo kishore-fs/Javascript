@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function checkPassword()
+        {
+            var nam=document.getElementById("pass").value
+
+            if((/[a-zA-Z]+/).test(nam)==false)
+            {
+                document.getElementById("out").innerHTML=("Enter atleast one Alphabets");
+            }
+            else if((/\W+/).test(nam)==false)
+            {
+                document.getElementById("out").innerHTML=("Enter atleast one Symbol");
+            }
+            else if((/[0-9]/).test(nam)==false)
+            {
+                document.getElementById("out").innerHTML=("Enter atleast one Number");
+            }
+            else if((/[a-zA-Z0-9\W]{6,}/).test(nam)==false)    
+            {
+                document.getElementById("out").innerHTML=("Need atleast 6 character");
+            }
+            else if((/[a-zA-Z0-9\W]{12,}/).test(nam)==false) 
+            {
+                document.getElementById("out").innerHTML=("Good Password")
+            }
+            else{
+                document.getElementById("out").innerHTML=("Strong Password") 
+            }
+        }
+    </script>
+        <label>Password</label>
+        <input type="text" id="pass" onkeyup="checkPassword()" required><span id="out"></span><br>
+        <button >check</button>
+
+</body>
+</html>

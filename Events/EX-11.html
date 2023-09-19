@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Manipulation</title>
+</head>
+<body>
+    <!-- Javascript -->
+    <script type="text/javascript">
+        function datfun()
+        {
+            var d=new Date(document.getElementById("userDate").value);
+            var dat=d.setDate(d.getDate()+5);
+            document.getElementById("aft").value=d.toLocaleDateString();
+            var dat=d.setDate(d.getDate()-10);
+            document.getElementById("bef").value=d.toLocaleDateString();
+        }
+    </script>
+
+    <!-- HTML Part -->
+    <label for="userDate">Enter Date</label>
+    <input type="date" id="userDate">
+    <button onclick="datfun()">click</button><br><br>
+    <label for="bef">5 Days Before</label>
+    <input type="text" id="bef" disabled><br>
+    <label for="aft">5 Days After</label>
+    <input type="text" id="aft" disabled>
+</body>
+</html>

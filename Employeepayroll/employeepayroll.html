@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Payroll</title>
+    <script src="https://kit.fontawesome.com/9edd8a6b5a.js" crossorigin="anonymous"></script>
+    <!-- link-javascript-file -->
+    <script src="employee.js"></script>
+    <!-- link-bootstrap-link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- css -->
+    <style>
+      body{
+        background-image: url(https://c4.wallpaperflare.com/wallpaper/897/950/537/ubuntu-linux-gradient-minimalism-wallpaper-thumb.jpg);
+        color: white;
+      }
+      .mainBtn{
+        background-color: rgb(165, 64, 196);
+        border: none;
+        width: 250px;
+        height: 40px;
+        border-radius: 20px;
+      }
+      .mainBg{
+        background-color: rgb(221, 94, 35);
+        width: 500px;
+        margin-left: 450px;
+
+      }
+      .textBody{
+        border-radius: 5px;
+        border: none;
+      }
+      .textBody:hover{
+        background-color: rgb(226, 98, 98);
+        color: white;
+      }
+      .mainBtn:hover{
+        box-shadow: 2px 2px rgb(193, 144, 212);
+        color: white;
+      }
+    </style>
+</head>
+<body>
+    <div class="mainBg d-flex flex-column align-items-center mt-5">
+        <br>
+<h1><i class="fa-brands fa-kickstarter" style="color: #ffffff;"></i>GM</h1>
+              <h1>EMPLOYEE PAYROLL</h1>
+    <table>
+        <tr>
+            <td><label>ENTER EMPLOYEE ID:</label></td>
+            <td><input type="number" id="empId"required class="textBody"></td>
+        </tr>
+        <tr>
+            <td><label>ENTER EMPLOYEE NAME:</label></td>
+            <td><input type="text" id="empName" onkeyup=" checkValue()"  class="textBody" required><span id="out"></span></td>
+        </tr>
+        <tr>
+            <td><label>ENTER DESIGNATION:</label></td>
+            <td><input type="text" id="empBasic"  class="textBody" required></td>
+        </tr>
+        <tr>
+            <td><label>ENTER BASIC PAY:</label></td>
+            <td><input onkeyup="check()" type="number" id="empPay"  class="textBody" required></td>
+        </tr>
+        <tr>        
+            <td><label>HRA:</label></td>
+            <td><input type="number" id="empHra"  class="textBody" disabled></td>
+        </tr>
+        <tr>
+            <td><label>DA:</label></td>
+            <td><input type="number" id="empDa"  class="textBody" disabled></td>
+        </tr>
+        <tr>
+            <td><label>PF:</label></td>
+            <td><input type="number" id="empPf"  class="textBody" disabled></td>
+        </tr>
+        <tr>
+            <td><label>GROSS PAY:</label></td>
+            <td><input type="number" id="empGrosspay"  class="textBody" disabled></td>
+        </tr>
+        <tr>
+            <td><label>NET PAY:</label></td>
+            <td><input type="number" id="empNetpay"  class="textBody" disabled></td>
+        </tr>
+    </table>
+    <center><button class="mainBtn mt-4" onclick="submit() ">SUBMIT</button></center>
+    <br>
+    <br>
+    </div>
+</body>
+</html>

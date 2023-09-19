@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var month=2,year=2012,list=[4,6,9,11];
+    function findDaysInMonth(month,year,list)
+    {
+        if((month<1) || (month>12))
+        {
+            console.log("Invalid Month");
+        }
+        else if(month==2)
+        {
+            if(((year%4==0) && (year%100!=0)) || (year%400==0))
+            {
+                console.log("29 days");
+            }
+            else
+            {
+                console.log("28 days");
+            }
+        }
+        else if(list.includes(month))
+        {
+            console.log("30 days");
+        }
+        else 
+        {
+            console.log("31 days");
+
+        }
+    }
+    findDaysInMonth(month,year,list);
+</script>
+</body>
+</html>

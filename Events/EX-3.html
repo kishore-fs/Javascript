@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- javascript -->
+    <script>
+        function main(){
+            let a= document.getElementById("enterValue1").value;
+            let b= document.getElementById("enterValue2").value;
+            if(a==b){
+                alert("Data's are equal")
+            }
+            else{
+                alert("Data's are not equal")
+            }
+        }
+    </script>
+    <!-- html -->
+    <h1>ENTER THE VALUE</h1>
+    <input type="text" id="enterValue1" placeholder="ENTERVALUE"><br><br>
+    <input type="text" id="enterValue2" placeholder="ENTERVALUE"><br><br>
+    <input type="button" onclick="main()" value="submit">
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Username Password</title>
+</head>
+<body>
+    <!-- Javascript -->
+    <script type="text/javascript">
+        function adding()
+        {
+            var a=parseInt(document.getElementById("inp").value);
+            var b=document.getElementById("add");
+            var op=document.createElement("option");
+            var node=document.createTextNode(a);
+            op.appendChild(node);
+            b.appendChild(op);
+            document.getElementById("inp").value=null;
+        }
+        function adding2()
+        {
+            var get=parseInt(document.getElementById("add").value);
+            var select=document.getElementById("out");
+            
+            for(i=0;i<get;i++)
+            {
+                select.innerHTML+="<label for='user'>Username</label><input id='user' type='text'><br><label for='pass'>Password</label><input id='pass' type='password'><br><br><br>";
+            }
+        }
+    </script>
+
+    <!-- HTML -->
+    <section>
+        <input type="number" id="inp">
+        <input type="button" onclick="adding()" value="Add">
+        <select id="add" onmouseout="adding2()"></select>
+    </section><br><br>
+    <section id="out"></section>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <style>
+        body {
+            background-image: url(https://c4.wallpaperflare.com/wallpaper/246/99/675/texture-digital-art-pattern-artwork-wallpaper-thumb.jpg);
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        #inventoryForm {
+            width: 80%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-image: url(https://c4.wallpaperflare.com/wallpaper/246/99/675/texture-digital-art-pattern-artwork-wallpaper-thumb.jpg);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #519249;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            box-shadow: 0 0 10px rgb(156, 140, 140);
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+        #operation{
+            width: 400px;
+        }
+        #itemName{
+            width:380px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inventory List</h1>
+    <form id="inventoryForm">
+        <label for="operation">Operation:</label>
+        <select id="operation">
+            <option value="add">Add</option>
+            <option value="remove">Remove</option>
+            <option value="getList">Get List</option>
+        </select><br><br>
+        <input type="text" id="itemName" placeholder="Item Name" required><br><br>
+        <button type="button" onclick="performOperation()">Submit</button>
+        <div id="output">
+        </div>
+    </form>
+    <script>
+        function inventoryList() {
+            let collection = [];
+
+            function add(name) {
+                if (!collection.includes(name)) {
+                    collection.push(name);
+                }
+            }
+
+            function remove(name) {
+                const index = collection.indexOf(name);
+                if (index !== -1) {
+                    collection.splice(index, 1);
+                }
+            }
+
+            function getList() {
+                return collection;
+            }
+
+            return {
+                add,
+                remove,
+                getList,
+            };
+        }
+
+        let inventory = inventoryList();
+
+        function performOperation() {
+            let operation = document.getElementById("operation").value;
+            let itemName = document.getElementById("itemName").value;
+            let output = document.getElementById("output");
+
+            if (operation === "add") {
+                inventory.add(itemName);
+                output.textContent = `Item '${itemName}' added.`;
+            } else if (operation === "remove") {
+                inventory.remove(itemName);
+                output.textContent = `Item '${itemName}' removed.`;
+            } else if (operation === "getList") {
+                const list = inventory.getList();
+                if (list.length > 0) {
+                    output.textContent = list.join(',');
+                } else {
+                    output.textContent = 'No Items';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+      <!-- css -->
+      <style>
+        .traffBack{
+            background-color: black;
+            height: 220px;
+            width: 80px;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        .traffIn{
+            height: 40px;
+            width: 40px;
+            background-color: gray;
+            border-radius: 20px; 
+        }
+        body{
+            background-color: aqua;
+        }
+        .switchbtn{
+            width: 80px;
+            height: 35px;
+            border-radius: 10px;
+            border: none;
+            background-color: black;
+            color: white;
+            margin-left: 300px;
+        }
+      </style>
+</head>
+<body>
+    <!-- javascript -->
+    <script type="text/javascript">
+        function switchStop(){
+            document.getElementById("traffRed").style.backgroundColor="red";
+            document.getElementById("redBtn").style.backgroundColor="red";
+            document.getElementById("traffYellow").style.backgroundColor="";
+            document.getElementById("traffGreen").style.backgroundColor="";
+            document.getElementById("yellowBtn").style.backgroundColor="";
+            document.getElementById("greenBtn").style.backgroundColor="";
+        }
+        function switchReady(){
+            document.getElementById("traffYellow").style.backgroundColor="yellow";
+            document.getElementById("yellowBtn").style.backgroundColor="yellow";
+            document.getElementById("traffGreen").style.backgroundColor="";
+            document.getElementById("traffRed").style.backgroundColor="";
+            document.getElementById("greenBtn").style.backgroundColor="";
+            document.getElementById("redBtn").style.backgroundColor="";
+        }
+        function switchGo(){
+            document.getElementById("traffGreen").style.backgroundColor="Green";
+            document.getElementById("greenBtn").style.backgroundColor="green";
+            document.getElementById("traffRed").style.backgroundColor="";
+            document.getElementById("traffYellow").style.backgroundColor="";
+            document.getElementById("yellowBtn").style.backgroundColor="";
+            document.getElementById("redBtn").style.backgroundColor="";
+        }
+    </script>
+    <!-- End javascript -->
+    <!-- html -->
+    <h1 class="mb-5"><center>Traffic Light</center></h1>
+    <div>
+        <div class="container text-center">
+            <div class="row align-items-center">
+              <div class="col p-5">
+                <button onclick="switchStop()" id="redBtn" class="switchbtn">Stop</button><br><br>
+                <button onclick="switchReady()" id="yellowBtn" class="switchbtn">Ready</button><br><br>
+                <button onclick="switchGo()" id="greenBtn" class="switchbtn">Go</button><br>
+              </div>
+              <div class="col">
+                <div class="traffBack">
+                <div class="traffIn" id="traffRed"></div><br>
+                <div class="traffIn" id="traffYellow"></div><br>
+                <div class="traffIn" id="traffGreen"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    </div>
+</body>
+</html>

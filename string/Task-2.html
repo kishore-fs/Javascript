@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-2</title>
+</head>
+<body>
+    <script>
+      function protect_email(email)
+    {
+        var main=email.lastIndexOf("@");
+        var str=email.slice(main-11,main);
+        return email.replace(str,"");
+    }
+    console.log(protect_email("robin_singh@example.com"));
+    </script>
+</body>
+</html>

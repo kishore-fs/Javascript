@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin: 20px auto;
+    max-width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+button#reset-button {
+    background-color: #FF5733;
+}
+
+#pay-slip {
+    display: none;
+    margin: 20px auto;
+    max-width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#pay-slip h2 {
+    color: #333;
+}
+
+#employee-info, #basic-pay-info, #net-pay-info {
+    margin: 10px 0;
+}
+
+    </style>
+    <title>Payroll Calculator</title>
+</head>
+<body>
+    <script>
+    function main(){
+     {
+    let payrollForm = document.getElementById('payroll-form');
+    let calculateButton = document.getElementById('calculate-button');
+    let resetButton = document.getElementById('reset-button');
+    let paySlip = document.getElementById('pay-slip');
+    let outputName = document.getElementById('output-name');
+    let outputBasicPay = document.getElementById('output-basic-pay');
+    let outputNetPay = document.getElementById('output-net-pay');
+    let outputPfPay = document.getElementById('output-pf-pay');
+    let outputHraPay = document.getElementById('output-hra-pay');
+
+    calculateButton.addEventListener('click', function () {
+        let employeeName = document.getElementById('employee-name').value;
+        let basicPay = parseFloat(document.getElementById('basic-pay').value);
+
+        if (!employeeName || isNaN(basicPay)) {
+            alert('Please enter valid data for Employee Name and Basic Pay.');
+            return;
+        }
+
+        const netPay = calculateNetPay(basicPay);
+        outputName.textContent = employeeName;
+        outputBasicPay.textContent = basicPay.toFixed(2);
+        outputNetPay.textContent = netPay.toFixed(2);
+        paySlip.style.display = 'block';
+
+        const PfPay = calculatePfPay(basicPay);
+        outputName.textContent = employeeName;
+        outputBasicPay.textContent = basicPay.toFixed(2);
+        outputPfPay.textContent = PfPay.toFixed(2);
+        paySlip.style.display = 'block';
+
+        const HraPay = calculateHraPay(basicPay);
+        outputName.textContent = employeeName;
+        outputBasicPay.textContent = basicPay.toFixed(2);
+        outputHraPay.textContent = HraPay.toFixed(2);
+         paySlip.style.display = 'block';
+    });
+
+    resetButton.addEventListener('click', function () {
+        document.getElementById('employee-name').value = '';
+        document.getElementById('basic-pay').value = '';
+        paySlip.style.display = 'none';
+    });
+
+    function calculateNetPay(basicPay) {
+        return 0.9 * basicPay;
+    }
+    function calculatePfPay(basicPay){
+        return 0.12 * basicPay;
+    }
+    function calculateHraPay(basicPay){
+        return 0.15 * basicPay;
+    }
+};
+}
+    </script>
+    <h1>Payroll Calculator</h1>
+    <form id="payroll-form">
+        <label for="employee-name" >Employee Name:</label>
+        <input type="text" id="employee-name" required><br><br>
+
+        <label for="basic-pay" >Basic Pay (per month):</label>
+        <input type="number" id="basic-pay" required><br><br>
+
+        <button type="button" id="calculate-button" onclick="payrollValue() ">Calculate Payroll</button>
+        <button type="button" id="reset-button">Reset</button>
+    </form>
+
+    <div id="pay-slip">
+        <h2>Pay Slip</h2>
+        <p id="employee-info">Employee Name: <span id="output-name"></span></p>
+        <p id="basic-pay-info">Basic Pay: <span id="output-basic-pay"></span></p>
+        <p id="net-pay-info">Net Pay: <span id="output-net-pay"></span></p>
+        <p id="pf-pay-info">Pf Pay: <span id="output-pf-pay"></span></p>
+        <p id="hra-pay-info">Hra Pay: <span id="output-hra-pay"></span></p>
+    </div>
+</body>
+</html>

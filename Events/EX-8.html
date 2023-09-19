@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function listingData()
+        {
+            var a=Number(document.getElementById("inValue").value);
+            var b=document.getElementById("addValue");
+            for(let i=0;i<a;i++)
+            {
+                var option=document.createElement("option");
+                list=document.createTextNode(i);
+                option.appendChild(list);
+                b.appendChild(option);
+
+            }
+        }
+    </script>
+
+    <h1>List the Input</h1>
+    <input type="number" id="inValue">
+    <input type="button" onkeydown="listingData()" value="click to Add">
+    <select id="addValue"></select>
+</body>
+</html>
